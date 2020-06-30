@@ -3,4 +3,9 @@ image:
 
 tasks:
   - init: yarn
-    command: npm link
+    command: |
+      echo $DC_SERVICES_CREDENTIALS > dc-services-sdk-credentials.json
+      echo "-----BEGIN RSA PRIVATE KEY-----" > private.key
+      echo $DC_SERVICES_PRIVATE_KEY >> private.key
+      echo "-----END RSA PRIVATE KEY-----" >> private.key
+      npm link
