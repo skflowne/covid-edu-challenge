@@ -1,0 +1,34 @@
+{
+  "name": "covid-edu-challenge",
+  "version": "1.0.0",
+  "description": "Challenge using Adobe Cloud PDF services to provide solutions to education in Covid-19 crisis",
+  "keywords": [
+    "cli",
+    "pdf"
+  ],
+  "main": "src/index.js",
+  "bin": {
+    "@skflowne/create-pdf": "bin/create-pdf",
+    "create-pdf": "bin/create-pdf"
+  },
+  "dependencies": {
+    "@adobe/dc-services-node-sdk": "^1.0.0",
+    "arg": "^4.1.3",
+    "esm": "^3.2.25",
+    "inquirer": "^7.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/skflowne/covid-edu-challenge.git"
+  },
+  "author": "Geoffrey Hug",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/skflowne/covid-edu-challenge/issues"
+  },
+  "homepage": "https://github.com/skflowne/covid-edu-challenge#readme"
+}
