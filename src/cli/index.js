@@ -6,13 +6,16 @@ import { createPDFFromStaticHTML } from "../pdf/from-static-html";
 
 function parseArguments(rawArgs) {
   const args = arg({
+    "-h": Boolean,
+    "--help": Boolean,
     "--html": String,
     "--out": String,
   });
 
   return {
-    htmlZipPath: args["--html"],
-    outputPath: args["--out"],
+    showHelp: args["-h"] || args["--help"],
+    htmlZipPath: args["--html"] || (args["_"] && args["_"][0]),
+    outputPath: args["--out"] || (args["_"] && args["_"][1]),
   };
 }
 
@@ -60,6 +63,19 @@ async function promptForMissingOptions(options) {
 
 export async function cli(args) {
   let options = parseArguments(args);
+
+  if (options.showHelp) {
+    console.log(`
+        Converts an HTML page into a PDF document.
+        usage: pdf_creator path-to-the-HTML-zip path-to-the-created-pdf [options]
+        options:
+        \t-h, --help    Shows this help screen
+        \t--html        Path of the zip file containing your HTML page to convert
+        \t--out         Path where the generated PDF will be saved at
+      `);
+    process.exit(0);
+  }
+
   try {
     options = await promptForMissingOptions(options);
     try {
