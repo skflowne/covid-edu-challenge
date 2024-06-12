@@ -8,8 +8,8 @@
   ],
   "main": "src/index.js",
   "bin": {
-    "@skflowne/create-pdf": "bin/pdf_creator",
-    "create-pdf": "bin/pdf_creator"
+    "@skflowne/pdf_creator": "bin/pdf_creator",
+    "pdf_creator": "bin/pdf_creator"
   },
   "dependencies": {
     "@adobe/dc-services-node-sdk": "^1.0.0",
