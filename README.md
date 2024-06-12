@@ -5,9 +5,10 @@ Challenge using Adobe Cloud PDF services to provide solutions to education in Co
 ```
 git clone https://github.com/skflowne/covid-edu-challenge
 cd covid-edu-challenge
+yarn # or npm install
+npm link
 ```
 Copy your `dc-services-sdk-credentials.json` and `private.key` into the root of the project
-Then run `npm link`
 
 Now the command line tool is available through `create-pdf`
 
